@@ -536,7 +536,10 @@ var jme = Numbas.jme = /** @lends Numbas.jme */ {
      * @returns {Numbas.jme.token}
      */
     makeSafe: function(t) {
-        switch(t.type) {
+        if(t!==undefined) {
+          var t_type = t.type;
+        }
+        switch(t_type) {
             case 'string':
                 t.safe = true;
                 var t2 = new TString(t.value);
